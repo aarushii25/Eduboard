@@ -389,6 +389,11 @@ io.on('connection', (socket) => {
     }
   });
 
+  // 🎯 Real-time Laser Pointer Trajectory Forwarding (No DB overhead)
+  socket.on('laser-pointer-trajectory', (laserData) => {
+    socket.to(laserData.roomId).emit('laser-pointer-trajectory', laserData);
+  });
+
   // Real-time stroke updates (while drawing) - no DB save, just broadcast
   socket.on('drawing-stroke', (strokeData) => {
     socket.to(strokeData.roomId).emit('drawing-stroke', strokeData);
@@ -398,7 +403,7 @@ io.on('connection', (socket) => {
     // Broadcast element to room
     socket.to(element.roomId).emit('draw-element', element);
 
-    // Save to DB (Update if exists, Push if new)
+    // Save to DB (Update if exists, Push if nwe)
     try {
       const roomId = element.roomId;
       // Try to update existing element in the array
