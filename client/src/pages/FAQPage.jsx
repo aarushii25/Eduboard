@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // FIX: internal links ke liye Link import
-import { FiSearch } from "react-icons/fi"; // FIX 3 & 4: react-icons se search icon
+import { Link } from "react-router-dom"; 
+import { FiSearch } from "react-icons/fi"; 
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState(null);

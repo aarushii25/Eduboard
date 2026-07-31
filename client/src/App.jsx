@@ -15,7 +15,7 @@ import LandingPage from "./pages/LandingPage";
 import FeaturesPage from "./pages/FeaturesPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
-import FAQPage from "./pages/FAQPage"; // FIX 1: Import add kiya
+import FAQPage from "./pages/FAQPage"; 
 import VerificationPending from "./pages/VerificationPending";
 import AdminPanel from "./pages/AdminPanel";
 import ForgotPassword from "./pages/ForgotPassword";
@@ -99,7 +99,6 @@ const AppLayout = () => {
           <Route path="/features" element={<FeaturesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          {/* FIX 2: /faq route add kiya, duplicate /contact remove kiya */}
           <Route path="/faq" element={<FAQPage />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
